@@ -6,7 +6,7 @@ A lot of different technologies are being used.
 - Area where all my files and directories are changing and living all the time 
 
 # Staging area
-- Files and Directories that we explcity add to the staging area
+- Files and Directories that we explicitly add to the staging area
 
 
 # Git repository
