@@ -10,13 +10,12 @@
      Campground = require('./models/campground'),
      //connects the seeds sheet
      seedDB = require('./seeds'),
-     Comment = require('./models/comment');
-
-
+     Comment = require('./models/comment'),
+     port = 3000;
+ // Connects the seed sheet
  seedDB();
 
  //connects to mongodb
-
  mongoose.connect('mongodb://localhost/yelp_camp', { useNewUrlParser: true });
 
  //telling express to use body-parser
@@ -25,6 +24,9 @@
  // allows ejs file to work without needing the file ext
  app.set('view engine', 'ejs');
 
+ // connects the stylesheet
+ app.use(express.static(__dirname + '/public'));
+ console.log(__dirname);
 
  // set the rout direction
  app.get('/', (req, res) => {
@@ -126,6 +128,6 @@
 
 
  //  starts the server 
- app.listen(3000, (req, res) => {
+ app.listen(port, (req, res) => {
      console.log('YelpCamp server has started');
  });
